@@ -17,4 +17,3 @@ else
   sleep 2m
   echo "DNS Failover procedure success" >> $(date +"%Y-%m-%d %T")-dns-script.log
 fi
-#end of if loop
