@@ -22,7 +22,7 @@ spec:
         resources:
           requests:
             memory: 512mb
-            cpu: 250mb
+            cpu: 256mb
         ports:
         - containerPort: 80
       - name: order_processor
@@ -30,6 +30,6 @@ spec:
         resources:
           requests:
             memory: 2048mb
-            cpu: 500mb
+            cpu: 512mb
         ports:
         - containerPort: 80
