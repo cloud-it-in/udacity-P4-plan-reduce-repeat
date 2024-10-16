@@ -1,6 +1,6 @@
-# udacity-P4-plan-reduce-repeat
+# udacity-P4-plan-reduce-repeat : Project Overview
 Udacity-P4-plan-reduce-repeat repo
-Project Overview
+
 
 You have recently joined the SRE team for an exotic plant reseller startup. They already have a small SRE team in place consisting of two other members. You are just finishing up your training period and are now ready to be on your own. 
 
