@@ -1,0 +1,20 @@
+#!/bin/bash
+
+if dnsTool -q active_server | grep -q "active"; then
+  echo "DNS 1 Server is reachable" >> $(date +"%Y-%m-%d %T")-dns-script.log
+  sleep 5
+  # Start the failover to DNS 2 Server
+  dnsTool -a failover -s dns2
+  sleep 2m
+  echo "DNS Failover procedure success" >> $(date +"%Y-%m-%d %T")-dns-script.log
+else
+  echo "DNS 1 Server is unreachable" >> $(date +"%Y-%m-%d %T")-dns-script.log
+  sleep 5
+  # Shutdown the DNS 1 Server
+  dnsTool -a shutdown -s dns1
+  # Start the failover to DNS 2 Server
+  dnsTool -a failover -s dns2
+  sleep 2m
+  echo "DNS Failover procedure success" >> $(date +"%Y-%m-%d %T")-dns-script.log
+fi
+#end of if loop
