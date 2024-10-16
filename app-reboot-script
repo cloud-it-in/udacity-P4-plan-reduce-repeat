@@ -1,7 +1,7 @@
 ## Item 1 – Restart main application: Script to restart main application.
 
 #!/bin/bash
-killall –l –q <process-name>
+killall –q <process-name>
 # This will kill any running jobs in the app/server and prepare for reboot.
 sleep 300
 # This will enforce 5 minutes wait time before starting the app/server again.
