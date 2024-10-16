@@ -3,7 +3,7 @@
 #!/bin/bash
 killall –l –q <process-name>
 # This will kill any running jobs in the app/server and prepare for reboot.
-sleep 5
+sleep 300
 # This will enforce 5 minutes wait time before starting the app/server again.
 start-app
 # This will re-start the app
