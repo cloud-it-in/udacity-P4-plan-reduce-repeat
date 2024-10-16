@@ -1,0 +1,35 @@
+#Updated Deployment File- for Prod Deployment
+ApiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deployment
+  namespace: course4
+  labels:
+    app: mainApp
+spec:
+  Replicas: 6
+  selector:
+    matchLabels:
+      app: mainApp
+  template:
+    metadata:
+      labels:
+        app: mainApp
+    spec:
+      containers:
+      - name: mainApp
+        image: nginx:latest
+        resources:
+          requests:
+            memory: 512mb
+            cpu: 250mb
+        ports:
+        - containerPort: 80
+      - name: order_processor
+        image: nginx:latest
+        resources:
+          requests:
+            memory: 2048mb
+            cpu: 500mb
+        ports:
+        - containerPort: 80
